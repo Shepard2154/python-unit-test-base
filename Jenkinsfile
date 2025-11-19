@@ -6,17 +6,7 @@ pipeline {
         }
     }
 
-    triggers {
-        pollSCM('* * * * *')
-    }
-
     stages {
-        stage("Checkout") {
-            steps {
-                checkout scm
-            }
-        }
-
         stage("deps") {
             steps {
                 sh 'pip install -r requirements.txt'
