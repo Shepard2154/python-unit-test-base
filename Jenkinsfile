@@ -5,6 +5,11 @@ pipeline {
             args '-u root'
         }
     }
+
+    triggers {
+        pollSCM('H/3 * * * *')
+    }
+
     stages {
         stage("deps") {
             steps {
